@@ -1,0 +1,27 @@
+[project]
+name = "cuda-tensorrt-llm"
+version = "0.1.0"
+description = "Optimized TensorRT-LLM project"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "torch==2.9.1",
+    "torchvision",
+    "tensorrt-llm==1.3.0rc1",
+    "etcd3",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[[tool.uv.index]]
+name = "nvidia"
+url = "https://pypi.nvidia.com"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+torchvision = { index = "pytorch-cu130" }
+tensorrt-llm = { index = "nvidia" }
+etcd3 = { git = "https://github.com/kragniz/python-etcd3.git", rev = "e58a899579ba416449c4e225b61f039457c8072a" }
