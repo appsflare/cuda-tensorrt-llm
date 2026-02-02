@@ -9,6 +9,7 @@ dependencies = [
     "torchvision",
     "tensorrt-llm==1.3.0rc1",
     "etcd3",
+    "huggingface_hub"
 ]
 
 [[tool.uv.index]]
